@@ -29,7 +29,7 @@ export default class Environment {
   public assignVar(varname: string, value: RuntimeVal): RuntimeVal {
     const env = this.resolve(varname);
     if (env.constants.has(varname)) {
-      throw `Cannot reasign to variable #{varname} as it was declared constant.`;
+      throw `Cannot reasign to variable ${varname} as it was declared constant.`;
     }
     env.variables.set(varname, value);
     return value;

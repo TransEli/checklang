@@ -112,6 +112,10 @@ export default class Parser {
   }
 
   private parse_expr(): Expr {
+    return this.parse_assignment_expr();
+  }
+
+  parse_assignment_expr(): Expr {
     const left = this.parse_additive_expr();
 
     if (this.at().type == TokenType.Equals) {
@@ -121,10 +125,6 @@ export default class Parser {
     }
 
     return left;
-  }
-
-  parse_assignment_expr(): Expr {
-    throw new Error("Method not implemented.");
   }
 
   private parse_additive_expr(): Expr {

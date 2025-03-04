@@ -1,7 +1,7 @@
 import Parser from "./frontend/parser.ts";
 import Environment from "./runtime/environment.ts";
 import { evaluate } from "./runtime/interpreter.ts";
-import { MK_NULL, MK_BOOL, MK_NUMBER } from "./runtime/values.ts";
+import { MK_NULL, MK_BOOL } from "./runtime/values.ts";
 repl();
 
 function repl() {
@@ -10,7 +10,7 @@ function repl() {
   env.declareVar("true", MK_BOOL(true), true);
   env.declareVar("false", MK_BOOL(false), true);
   env.declareVar("null", MK_NULL(), true);
-  console.log("CheckLang Repl v0.7");
+  console.log("CheckLang Repl v0.9");
   while (true) {
     const input = prompt("> ");
 
